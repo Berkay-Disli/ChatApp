@@ -52,10 +52,33 @@ struct EditProfileView: View {
                 .background(.white)
                 .padding(.top)
                 
+                VStack(alignment: .leading) {
+                    Text("Status")
+                        .foregroundColor(.gray)
+                        .padding()
+                    
+                    Button {
+                        // sheet to change from various templates
+                    } label: {
+                        HStack {
+                            Text("Riding a bike")
+                                .foregroundColor(.black)
+                            Spacer()
+                            Image(systemName: "pencil")
+                                .foregroundColor(.gray)
+                        }
+                        .padding()
+                        .background(.white)
+                    }
+
+                }
+                .padding(.top, 32)
+                
                 
                 Spacer()
             }
         }
+        .navigationTitle("Edit Profile")
         .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(content: {
