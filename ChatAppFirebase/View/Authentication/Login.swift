@@ -23,9 +23,9 @@ struct Login: View {
                 .font(.largeTitle).bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                VStack(spacing: 20) {
-                    CustomTextfield
-                    CustomPasswordField
+                VStack(spacing: 40) {
+                    CustomTextField(image: "envelope", placeholder: "email", text: $email, isSecure: false)
+                    CustomTextField(image: "lock", placeholder: "password", text: $password, isSecure: true)
                 }
                 .padding([.horizontal, .top], 32)
                 
@@ -84,41 +84,5 @@ struct Login: View {
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
         Login()
-    }
-}
-
-extension Login {
-    var CustomTextfield: some View {
-        VStack(spacing: 16) {
-            HStack {
-                Image(systemName: "envelope")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(.gray)
-                TextField("email", text: $email)
-                    .autocorrectionDisabled()
-                    .textInputAutocapitalization(.never)
-            }
-            Divider()
-                .background(.gray)
-        }
-    }
-    
-    var CustomPasswordField: some View {
-        VStack(spacing: 16) {
-            HStack {
-                Image(systemName: "lock")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(.gray)
-                SecureField("password", text: $password)
-                    .autocorrectionDisabled()
-                    .textInputAutocapitalization(.never)
-            }
-            Divider()
-                .background(.gray)
-        }
     }
 }
