@@ -14,7 +14,6 @@ struct MainTabView: View {
     var body: some View {
         ZStack {
             switch navVM.tabSelection {
-                
             case .chats:
                 ConversationsPage()
                     .transition(AnyTransition.opacity.animation(.easeInOut))

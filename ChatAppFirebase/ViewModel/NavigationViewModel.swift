@@ -34,7 +34,7 @@ enum NavigationTabs: String, CaseIterable {
 }
 
 class NavigationViewModel: ObservableObject {
-    @Published var tabSelection: NavigationTabs = .settings
+    @Published var tabSelection: NavigationTabs = .chats
     @Published var tabBarEnabled = true
     
     init() {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23105A7E28720B3B00EE22CA /* StatusSelectionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23105A7D28720B3B00EE22CA /* StatusSelectionPage.swift */; };
+		23105A8028720E1600EE22CA /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23105A7F28720E1600EE22CA /* StatusViewModel.swift */; };
 		2397E776286F249800B8C447 /* ChatAppFirebaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397E775286F249800B8C447 /* ChatAppFirebaseApp.swift */; };
 		2397E778286F249800B8C447 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397E777286F249800B8C447 /* ContentView.swift */; };
 		2397E77A286F249900B8C447 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2397E779286F249900B8C447 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23105A7D28720B3B00EE22CA /* StatusSelectionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSelectionPage.swift; sourceTree = "<group>"; };
+		23105A7F28720E1600EE22CA /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		2397E772286F249800B8C447 /* ChatAppFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAppFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2397E775286F249800B8C447 /* ChatAppFirebaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppFirebaseApp.swift; sourceTree = "<group>"; };
 		2397E777286F249800B8C447 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			children = (
 				23A27F1D287057230026DAE5 /* NavigationViewModel.swift */,
 				23BF6C152870CCBE00C73B69 /* SettingsViewModel.swift */,
+				23105A7F28720E1600EE22CA /* StatusViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			children = (
 				23B7CCFE2870B90300ADD545 /* SettingsPage.swift */,
 				23BF6C172870CE5600C73B69 /* EditProfileView.swift */,
+				23105A7D28720B3B00EE22CA /* StatusSelectionPage.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23105A8028720E1600EE22CA /* StatusViewModel.swift in Sources */,
 				23BF6C182870CE5600C73B69 /* EditProfileView.swift in Sources */,
 				2397E78A286F253D00B8C447 /* Login.swift in Sources */,
 				2397E778286F249800B8C447 /* ContentView.swift in Sources */,
@@ -267,6 +274,7 @@
 				23A27F1C287055D50026DAE5 /* MainTabView.swift in Sources */,
 				23B7CCFD2870B8FD00ADD545 /* ConversationsPage.swift in Sources */,
 				23B7CCFF2870B90300ADD545 /* SettingsPage.swift in Sources */,
+				23105A7E28720B3B00EE22CA /* StatusSelectionPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

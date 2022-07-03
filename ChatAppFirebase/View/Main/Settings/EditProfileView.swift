@@ -11,6 +11,8 @@ struct EditProfileView: View {
     @EnvironmentObject var navVM: NavigationViewModel
     @State private var fullname = "Berkay Dişli"
     @Environment(\.dismiss) var dismiss
+    @State private var sheetIsOn = false
+    @StateObject var statusVM = StatusViewModel()
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -43,10 +45,9 @@ struct EditProfileView: View {
                     }
                     .padding(.horizontal)
                     Divider()
-                        .padding(.horizontal)
                     
                     TextField("", text: $fullname)
-                        .padding(8)
+                        .padding(8).padding(.vertical, 2)
                 }
                 .padding(.top)
                 .background(.white)
@@ -58,10 +59,10 @@ struct EditProfileView: View {
                         .padding()
                     
                     Button {
-                        // sheet to change from various templates
+                        sheetIsOn.toggle()
                     } label: {
                         HStack {
-                            Text("Riding a bike")
+                            Text(statusVM.userStatus.title)
                                 .foregroundColor(.black)
                             Spacer()
                             Image(systemName: "pencil")
@@ -81,6 +82,10 @@ struct EditProfileView: View {
         .navigationTitle("Edit Profile")
         .navigationBarBackButtonHidden()
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $sheetIsOn, content: {
+            StatusSelectionPage(statusVM: statusVM)
+                .presentationDetents([.height(770)])
+        })
         .toolbar(content: {
             ToolbarItem(placement: .navigationBarLeading) {
                 Image(systemName: "chevron.left")
