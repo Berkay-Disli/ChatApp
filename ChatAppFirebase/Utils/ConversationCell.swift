@@ -17,7 +17,7 @@ struct ConversationCell: View {
                     .frame(width: 48, height: 48)
                     .clipShape(Circle())
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 4) {
                     Text("Seda Dişli")
                         .font(.system(size: 15)).fontWeight(.semibold)
                     

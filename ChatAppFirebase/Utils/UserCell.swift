@@ -17,7 +17,7 @@ struct UserCell: View {
                     .frame(width: 48, height: 48)
                     .clipShape(Circle())
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 4) {
                     Text("Pheonix")
                         .font(.system(size: 15)).fontWeight(.semibold)
                     
