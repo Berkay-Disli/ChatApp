@@ -18,7 +18,7 @@ struct SettingsPage: View {
                         EditProfileView()
                     } label: {
                         HStack {
-                            Image(systemName: "person")
+                            Image("berkay")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 64)

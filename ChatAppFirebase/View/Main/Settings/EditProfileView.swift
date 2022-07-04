@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct EditProfileView: View {
     @EnvironmentObject var navVM: NavigationViewModel
@@ -13,6 +14,8 @@ struct EditProfileView: View {
     @Environment(\.dismiss) var dismiss
     @State private var sheetIsOn = false
     @StateObject var statusVM = StatusViewModel()
+    @State private var showImagePicker = false
+    @State var image: UIImage? = nil
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -22,17 +25,40 @@ struct EditProfileView: View {
                 VStack {
                     HStack {
                         VStack {
-                            Image(systemName: "person")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 64, height: 64)
-                                .clipShape(Circle())
+                            if let image {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 64, height: 64)
+                                    .clipShape(Circle())
+                            } else {
+                                Image("berkay")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 64, height: 64)
+                                    .clipShape(Circle())
+                            }
                             
                             Button {
-                                
+                                showImagePicker.toggle()
                             } label: {
                                 Text("Edit")
                                     .foregroundColor(.orange)
+                            }
+                            .fullScreenCover(isPresented: $showImagePicker) {
+                                PhotoPicker(filter: .images, limit: 1) { results in
+                                    PhotoPicker.convertToUIImageArray(fromResults: results) { (imagesOrNil, errorOrNil) in
+                                                if let error = errorOrNil {
+                                                  print(error)
+                                                }
+                                                if let images = imagesOrNil {
+                                                  if let first = images.first {
+                                                    print(first)
+                                                    image = first
+                                                  }
+                                                }
+                                              }
+                                }
                             }
                         }
                         
