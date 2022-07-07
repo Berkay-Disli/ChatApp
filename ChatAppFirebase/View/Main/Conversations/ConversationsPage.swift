@@ -21,7 +21,12 @@ struct ConversationsPage: View {
                 ScrollView {
                     LazyVStack {
                         ForEach(1...16, id:\.self) { item in
-                            ConversationCell()
+                            NavigationLink {
+                                ChatView()
+                            } label: {
+                                ConversationCell()
+                            }
+
                         }
                     }
                 }
@@ -45,6 +50,7 @@ struct ConversationsPage: View {
                 }
                 .sheet(isPresented: $showNewMessageSheet) {
                     NewMessageSheet(showChatView: $showChatView)
+                        .presentationDetents([.height(520), .large])
                 }
 
             }

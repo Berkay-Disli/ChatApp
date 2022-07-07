@@ -27,20 +27,20 @@ struct SearchBar: View {
                         .padding(.leading, 8)
                 }
                 .onTapGesture {
-                    isEditing.toggle()
+                    withAnimation(.easeInOut) { isEditing .toggle() }
                 }
             
             if isEditing {
                 Button {
-                    isEditing = false
+                    withAnimation(.easeInOut) { isEditing = false }
                     hideKeyboard()
                     text = ""
                 } label: {
                     Text("Cancel")
                         .foregroundColor(.black)
                         .padding(.trailing, 8)
-                        .transition(AnyTransition.move(edge: .trailing).animation(.easeInOut))
                 }
+                .transition(AnyTransition.move(edge: .trailing).animation(.easeInOut))
 
             }
         }

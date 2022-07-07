@@ -18,7 +18,7 @@ struct ConversationCell: View {
                     .clipShape(Circle())
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Seda Dişli")
+                    Text("Seda Araz")
                         .font(.system(size: 15)).fontWeight(.semibold)
                     
                     Text("Some text message for now...")

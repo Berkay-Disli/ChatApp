@@ -9,16 +9,41 @@ import SwiftUI
 
 struct ChatView: View {
     @EnvironmentObject var navVM: NavigationViewModel
-
+    @Environment(\.dismiss) var dismiss
+    @State private var textMessage = ""
     var body: some View {
-        Text("Chat View :)))))")
-            //.toolbar(.hidden)
-            .onAppear {
-                navVM.dismissTabBar()
+        VStack(spacing: 0) {
+            HStack(alignment: .bottom) {
+                Image(systemName: "chevron.left")
+                    .onTapGesture {
+                        dismiss()
+                    }
+                Spacer()
+                Text("Seda Araz").bold()
+                Spacer()
             }
-            .onDisappear {
-                navVM.enableTabBar()
+            .padding()
+            Divider()
+                
+            ScrollView {
+                LazyVStack( spacing: 12) {
+                    ForEach(0...9, id:\.self) { item in
+                        MessageCell(isFromUser: true, text: "Ahahah", img: "sedadisli")
+                    }
+                }
+                .padding(.top)
             }
+            
+            CustomInputView(text: $textMessage)
+        }
+        .navigationBarBackButtonHidden()
+        
+        .onAppear {
+            navVM.dismissTabBar()
+        }
+        .onDisappear {
+            navVM.enableTabBar()
+        }
     }
 }
 
