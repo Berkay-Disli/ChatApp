@@ -29,6 +29,7 @@
 		23B7CD032870C98900ADD545 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B7CD022870C98900ADD545 /* SettingsCell.swift */; };
 		23BF6C162870CCBE00C73B69 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF6C152870CCBE00C73B69 /* SettingsViewModel.swift */; };
 		23BF6C182870CE5600C73B69 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BF6C172870CE5600C73B69 /* EditProfileView.swift */; };
+		23D8A5AD28770AD000E9840D /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D8A5AC28770AD000E9840D /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		23B7CD022870C98900ADD545 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		23BF6C152870CCBE00C73B69 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		23BF6C172870CE5600C73B69 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		23D8A5AC28770AD000E9840D /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				23B7CD022870C98900ADD545 /* SettingsCell.swift */,
 				2328463B28730929001769A7 /* ConversationCell.swift */,
 				2328464028730EF6001769A7 /* UserCell.swift */,
+				23D8A5AC28770AD000E9840D /* SearchBar.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				23B7CD012870BB9B00ADD545 /* ChatView.swift in Sources */,
 				2397E776286F249800B8C447 /* ChatAppFirebaseApp.swift in Sources */,
 				23A27F19287051B60026DAE5 /* CustomTextField.swift in Sources */,
+				23D8A5AD28770AD000E9840D /* SearchBar.swift in Sources */,
 				23BF6C162870CCBE00C73B69 /* SettingsViewModel.swift in Sources */,
 				23B7CCFB2870B8A000ADD545 /* ChannelsPage.swift in Sources */,
 				23A27F1C287055D50026DAE5 /* MainTabView.swift in Sources */,
