@@ -29,8 +29,9 @@ struct ConversationsPage: View {
 
                         }
                     }
+                    .padding(.top)
                 }
-                .padding(.top)
+                
                 
                 
                 
@@ -53,6 +54,9 @@ struct ConversationsPage: View {
                         .presentationDetents([.height(520), .large])
                 }
 
+            }
+            .onAppear {
+                navVM.enableTabBar()
             }
             .navigationTitle("Conversations")
         }

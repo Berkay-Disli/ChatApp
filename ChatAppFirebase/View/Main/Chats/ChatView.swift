@@ -11,6 +11,8 @@ struct ChatView: View {
     @EnvironmentObject var navVM: NavigationViewModel
     @Environment(\.dismiss) var dismiss
     @State private var textMessage = ""
+    @StateObject var msgVM = MessageViewModel()
+    
     var body: some View {
         VStack(spacing: 0) {
             HStack(alignment: .bottom) {
@@ -21,14 +23,15 @@ struct ChatView: View {
                 Spacer()
                 Text("Seda Araz").bold()
                 Spacer()
+                
             }
             .padding()
             Divider()
                 
             ScrollView {
                 LazyVStack( spacing: 12) {
-                    ForEach(0...9, id:\.self) { item in
-                        MessageCell(isFromUser: true, text: "Ahahah", img: "sedadisli")
+                    ForEach(msgVM.messages) { item in
+                        MessageCell(isFromUser: item.isFromUser, text: item.text, img: "sedadisli")
                     }
                 }
                 .padding(.top)
@@ -40,9 +43,6 @@ struct ChatView: View {
         
         .onAppear {
             navVM.dismissTabBar()
-        }
-        .onDisappear {
-            navVM.enableTabBar()
         }
     }
 }
